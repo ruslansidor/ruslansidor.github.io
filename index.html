@@ -1,0 +1,1112 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0C0C0E">
+<meta name="description" content="Marek Bartos - fotograf a kameraman, Bratislava. Kontakt a objednavky.">
+<title>Ruslan Sidor Tréning</title>
+<style>
+  :root{
+    /* light (systemGrouped) */
+    --bg:#F1F2F4;
+    --bg-2:#FFFFFF;
+    --glass:rgba(255,255,255,.76);
+    --glass-2:rgba(255,255,255,.82);
+    --stroke:rgba(0,0,0,.09);
+    --sep:rgba(60,64,70,.2);
+    --label:#16181C;
+    --label-2:rgba(60,64,70,.62);
+    --label-3:rgba(60,64,70,.36);
+    --brass:#4E555F;
+    --brass-2:#2E343B;
+    --brass-soft:rgba(78,85,95,.1);
+    --brass-line:rgba(78,85,95,.26);
+    --grad-a:#6B737D; --grad-b:#3A4149; --grad-c:#22272D;
+    --btn:linear-gradient(145deg,#79828D 0%,#39404A 30%,#232A31 55%,#525A64 78%,#2C333A 100%);
+    --on-brass:#FFFFFF;
+    --press:rgba(0,0,0,.05);
+    --glow-1:rgba(110,124,142,.16);
+    --glow-2:rgba(110,124,142,.08);
+    --grain:.12;
+    --shadow:0 22px 50px -32px rgba(0,0,0,.42);
+    --radius-l:26px; --radius-m:18px;
+    --sf:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+         "Helvetica Neue", "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+  }
+  :root:not([data-theme="light"]) { color-scheme:light dark }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0E0F11; --bg-2:#16181B;
+      --glass:rgba(28,31,35,.72); --glass-2:rgba(20,22,25,.6);
+      --stroke:rgba(255,255,255,.11);
+      --sep:rgba(100,108,118,.42);
+      --label:#EDEFF2; --label-2:rgba(226,231,238,.6); --label-3:rgba(226,231,238,.33);
+      --brass:#AEB6C0; --brass-2:#DDE3EA;
+      --brass-soft:rgba(190,198,208,.13); --brass-line:rgba(190,198,208,.3);
+      --grad-a:#F4F6F8; --grad-b:#B9C0C9; --grad-c:#7E858E;
+      --btn:linear-gradient(145deg,#F4F6F8 0%,#B9C0C9 26%,#7E858E 52%,#C6CDD5 78%,#8A9099 100%);
+      --on-brass:#14161A;
+      --press:rgba(255,255,255,.08);
+      --glow-1:rgba(150,164,184,.14); --glow-2:rgba(150,164,184,.07);
+      --grain:.26;
+      --shadow:0 26px 60px -34px rgba(0,0,0,.95);
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --bg:#0E0F11; --bg-2:#16181B;
+    --glass:rgba(28,31,35,.72); --glass-2:rgba(20,22,25,.6);
+    --stroke:rgba(255,255,255,.11);
+    --sep:rgba(100,108,118,.42);
+    --label:#EDEFF2; --label-2:rgba(226,231,238,.6); --label-3:rgba(226,231,238,.33);
+    --brass:#AEB6C0; --brass-2:#DDE3EA;
+    --brass-soft:rgba(190,198,208,.13); --brass-line:rgba(190,198,208,.3);
+    --grad-a:#F4F6F8; --grad-b:#B9C0C9; --grad-c:#7E858E;
+    --btn:linear-gradient(145deg,#F4F6F8 0%,#B9C0C9 26%,#7E858E 52%,#C6CDD5 78%,#8A9099 100%);
+    --on-brass:#14161A;
+    --press:rgba(255,255,255,.08);
+    --glow-1:rgba(150,164,184,.14); --glow-2:rgba(150,164,184,.07);
+    --grain:.26;
+    --shadow:0 26px 60px -34px rgba(0,0,0,.95);
+  }
+
+  *{box-sizing:border-box}
+  html,body{scroll-behavior:smooth}
+  html{overflow-x:clip}
+  body{
+    margin:0; background:var(--bg); color:var(--label);
+    font-family:var(--sf); font-size:17px; line-height:1.47; letter-spacing:-.01em;
+    -webkit-font-smoothing:antialiased; padding-bottom:104px;
+  }
+  body::before{
+    content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(70% 45% at 50% 0%, var(--glow-1), transparent 70%),
+      radial-gradient(60% 40% at 90% 100%, var(--glow-2), transparent 70%);
+  }
+  body::after{
+    content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+    opacity:var(--grain, .2); mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)' opacity='.85'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- compact nav ---------- */
+  .nav{position:fixed; top:0; left:0; right:0; z-index:30;
+    padding:0 16px; padding-top:env(safe-area-inset-top, 0px);
+    background:var(--glass); -webkit-backdrop-filter:blur(26px) saturate(180%);
+    backdrop-filter:blur(26px) saturate(180%);
+    border-bottom:.5px solid var(--stroke);
+    transform:translateY(-102%); transition:transform .32s cubic-bezier(.32,.72,0,1)}
+  .nav.show{transform:translateY(0)}
+  .nav .in{max-width:540px; margin:0 auto; height:48px; display:flex; align-items:center; gap:10px}
+  .nav .ini{width:28px; height:28px; border-radius:50%; flex:none; display:grid; place-items:center;
+    font-size:11.5px; font-weight:700; letter-spacing:.01em; color:var(--on-brass);
+    background:linear-gradient(180deg,var(--grad-a),var(--grad-b))}
+  .nav b{flex:1; font-size:15.5px; font-weight:600; letter-spacing:-.02em;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .nav a{flex:none; display:grid; place-items:center; width:32px; height:32px; border-radius:50%;
+    color:var(--label); background:var(--press)}
+  .nav a svg{width:16px; height:16px}
+
+  /* ---------- layout ---------- */
+  .shell{position:relative; z-index:1; width:100%; max-width:540px; margin:0 auto;
+    padding-inline:16px; padding-block:14px 26px;
+    display:flex; flex-direction:column; gap:22px}
+  .col-main{display:flex; flex-direction:column; gap:22px}
+
+  /* ---------- cover ---------- */
+  .cover{position:relative; border-radius:var(--radius-l); overflow:hidden;
+    aspect-ratio:4/5; max-width:100%; box-shadow:var(--shadow), inset 0 0 0 1px var(--stroke);
+    display:flex; flex-direction:column; justify-content:flex-end; padding:14px; isolation:isolate}
+  .cover .bg{position:absolute; inset:-5% -2%; z-index:-2; will-change:transform;
+    background-color:#101215;
+    background-image:url('foto/cover.jpg');
+    background-size:cover; background-position:50% 18%}
+  .cover .grain{position:absolute; inset:0; z-index:-1; opacity:.28; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+  .cover .veil{position:absolute; inset:0; z-index:-1;
+    background:linear-gradient(180deg, transparent 36%, rgba(6,6,7,.5) 72%, rgba(6,6,7,.84) 100%)}
+  .cover .ph{position:absolute; inset:0; z-index:-1; display:grid; place-items:center;
+    font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+    color:rgba(255,255,255,.26)}
+
+  .seg{position:absolute; top:14px; right:14px; display:flex; gap:2px; padding:2px; border-radius:99px;
+    background:rgba(28,28,30,.5);
+    -webkit-backdrop-filter:blur(24px) saturate(180%); backdrop-filter:blur(24px) saturate(180%);
+    box-shadow:inset 0 0 0 .5px rgba(255,255,255,.16)}
+  .seg button{appearance:none; border:0; cursor:pointer; background:transparent;
+    padding:9px 15px; min-height:38px; border-radius:99px; touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent; font-family:var(--sf); font-size:13px; font-weight:600;
+    color:rgba(235,238,245,.72); transition:background .22s ease, color .22s ease}
+  .seg button[aria-pressed="true"]{background:rgba(255,255,255,.2); color:#fff;
+    box-shadow:0 1px 3px rgba(0,0,0,.4)}
+  .seg button:focus-visible{outline:2px solid #EDF1F6; outline-offset:2px}
+
+  .namecard{position:relative; border-radius:20px; padding:16px 18px 17px; color:#fff;
+    background:rgba(20,20,22,.52);
+    -webkit-backdrop-filter:blur(30px) saturate(180%); backdrop-filter:blur(30px) saturate(180%);
+    box-shadow:inset 0 0 0 .5px rgba(255,255,255,.14), 0 8px 24px -14px rgba(0,0,0,.8)}
+  .chip{display:inline-flex; align-items:center; gap:6px; margin-bottom:9px; padding:4px 9px;
+    border-radius:99px; background:rgba(210,218,228,.18); box-shadow:inset 0 0 0 .5px rgba(210,218,228,.45);
+    font-size:11px; font-weight:600; color:#EDF1F6}
+  .chip i{width:5px; height:5px; border-radius:50%; background:#EDF1F6; display:block}
+  h1{margin:0; font-size:clamp(30px,7.6vw,40px); line-height:1.04; font-weight:700; letter-spacing:-.035em}
+  .namecard p{margin:8px 0 0; font-size:15px; color:rgba(235,235,245,.72)}
+
+  /* ---------- actions ---------- */
+  .dock{position:fixed; left:0; right:0; bottom:0; z-index:25;
+    padding:10px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    background:linear-gradient(180deg, transparent, var(--bg) 46%)}
+  .dock .in{max-width:540px; margin:0 auto; display:flex; gap:8px}
+  .act{display:flex; align-items:center; justify-content:center; gap:8px; height:54px;
+    border-radius:16px; text-decoration:none; font-size:16px; font-weight:600; letter-spacing:-.015em;
+    transition:transform .18s cubic-bezier(.32,.72,0,1), filter .18s ease, background .18s ease}
+  .act:active{transform:scale(.97)}
+  .act.primary{flex:1; color:var(--on-brass); position:relative; overflow:hidden; isolation:isolate;
+    --tilt:0deg; --mx:50%; --my:50%;
+    background:var(--btn);
+    background-image:linear-gradient(calc(145deg + var(--tilt)),#F4F6F8 0%,#B9C0C9 26%,#7E858E 52%,#C6CDD5 78%,#8A9099 100%);
+    box-shadow:inset 0 .5px 0 rgba(255,255,255,.5), 0 12px 26px -16px rgba(154,117,38,.9)}
+  .act.primary:hover{filter:brightness(1.04)}
+  :root:not([data-theme="dark"]) .act.primary{background-image:var(--btn)}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .act.primary{
+      background-image:linear-gradient(calc(145deg + var(--tilt)),#F4F6F8 0%,#B9C0C9 26%,#7E858E 52%,#C6CDD5 78%,#8A9099 100%)}
+  }
+  :root[data-theme="dark"] .act.primary{
+    background-image:linear-gradient(calc(145deg + var(--tilt)),#F4F6F8 0%,#B9C0C9 26%,#7E858E 52%,#C6CDD5 78%,#8A9099 100%)}
+  .act.primary > *{position:relative; z-index:2}
+  /* travelling highlight — 1.1s of motion, then a long rest */
+  .act.primary::before{
+    content:""; position:absolute; z-index:1; top:-60%; bottom:-60%; width:38%; left:-45%;
+    background:linear-gradient(100deg, transparent, rgba(255,255,255,.62) 46%, rgba(255,255,255,.9) 52%, transparent);
+    transform:skewX(-16deg); filter:blur(1px);
+    animation:sheen 8s cubic-bezier(.4,0,.2,1) infinite}
+  @keyframes sheen{
+    0%{left:-45%} 14%{left:115%} 100%{left:115%}
+  }
+  /* soft glow that follows the finger or cursor */
+  .act.primary::after{
+    content:""; position:absolute; inset:0; z-index:1; opacity:0;
+    background:radial-gradient(38% 120% at var(--mx) var(--my), rgba(255,255,255,.55), transparent 70%);
+    transition:opacity .28s ease}
+  .act.primary.lit::after{opacity:1}
+  .act.glass{width:54px; color:var(--label); background:var(--glass);
+    -webkit-backdrop-filter:blur(24px) saturate(180%); backdrop-filter:blur(24px) saturate(180%);
+    box-shadow:inset 0 0 0 .5px var(--stroke)}
+  .act:focus-visible{outline:2px solid var(--brass); outline-offset:3px}
+  .act svg{width:21px; height:21px; flex:none}
+
+  /* ---------- lists ---------- */
+  .group{display:flex; flex-direction:column; gap:9px}
+  .ghead{margin:0 0 0 4px; font-size:12.5px; font-weight:600; color:var(--label-3); text-transform:uppercase}
+  .list{border-radius:var(--radius-m); overflow:hidden; background:var(--glass);
+    -webkit-backdrop-filter:blur(26px) saturate(180%); backdrop-filter:blur(26px) saturate(180%);
+    box-shadow:inset 0 0 0 .5px var(--stroke), 0 1px 2px rgba(0,0,0,.04)}
+  .row{display:flex; align-items:center; gap:13px; padding:13px 15px; position:relative;
+    text-decoration:none; color:inherit; transition:background .16s ease}
+  .row + .row::before, .free + .row::before{content:""; position:absolute; top:0; left:15px; right:0;
+    height:.5px; background:var(--sep)}
+  .row.icon + .row.icon::before{left:57px}
+  .row.icon{align-items:flex-start}
+  .row.icon .ic{margin-top:2px}
+  .row.icon.mid{align-items:center}
+  .row.icon.mid .ic{margin-top:0}
+  a.row:hover{background:var(--press)}
+  a.row:active{background:var(--press); filter:brightness(.97)}
+  a.row:focus-visible{outline:2px solid var(--brass); outline-offset:-2px}
+  .ic{flex:none; width:29px; height:29px; border-radius:8px; display:grid; place-items:center;
+    background:var(--brass-soft); box-shadow:inset 0 0 0 .5px var(--brass-line); color:var(--brass)}
+  .ic svg{width:16px; height:16px}
+  .txt{flex:1; min-width:0}
+  .txt b{display:block; font-size:16px; font-weight:600; letter-spacing:-.015em}
+  .txt span{display:block; font-size:13.5px; color:var(--label-2); line-height:1.4}
+  .val{flex:none; font-size:16px; font-weight:500; color:var(--label-2); font-variant-numeric:tabular-nums}
+  .val.price{font-size:18px; font-weight:600; color:var(--brass)}
+  .chev{flex:none; width:8px; height:13px; color:var(--label-3)}
+
+  .step{flex:none; width:29px; height:29px; border-radius:50%; display:grid; place-items:center;
+    font-size:13px; font-weight:700; color:var(--on-brass); margin-top:1px;
+    background:linear-gradient(180deg,var(--grad-a),var(--grad-b)); font-variant-numeric:tabular-nums}
+
+  .free{display:flex; align-items:center; gap:13px; padding:14px 15px; position:relative;
+    background:linear-gradient(110deg, var(--brass-soft), transparent);
+    box-shadow:inset 0 0 0 .5px var(--brass-line)}
+  .free .txt b{color:var(--brass)}
+  .badge{flex:none; padding:5px 11px; border-radius:99px; font-size:12px; font-weight:700;
+    color:var(--on-brass); background:linear-gradient(180deg, var(--grad-a), var(--grad-b))}
+
+  .note{margin:0; text-align:center; font-size:12.5px; color:var(--label-3)}
+  footer{text-align:center; font-size:12.5px; color:var(--label-3)}
+
+  /* ---------- tablet / laptop ---------- */
+  @media (min-width:760px){
+    .journey .cap{padding:22px}
+    body{padding-bottom:36px}
+    .shell{max-width:1040px; padding-inline:28px; padding-block:26px 40px;
+      display:grid; grid-template-columns:minmax(300px,380px) 1fr; gap:30px; align-items:start}
+    .col-side{position:sticky; top:26px; display:flex; flex-direction:column; gap:14px}
+    .cover{aspect-ratio:4/5}
+    .dock{position:static; padding:0; background:none}
+    .dock .in{max-width:none}
+    .nav{display:none}
+    .col-main{gap:24px}
+  }
+  @media (min-width:1080px){
+    .shell{max-width:1120px; gap:44px}
+  }
+
+  /* ================= motion ================= */
+  /* ambient drift of the page glow */
+  body::before{animation:drift 26s ease-in-out infinite alternate; will-change:transform}
+  @keyframes drift{
+    from{transform:translate3d(0,0,0) scale(1)}
+    to{transform:translate3d(-2%,1.5%,0) scale(1.04)}
+  }
+
+  /* light that lives on the cover: breathes, follows tilt or cursor */
+  .cover .sheen{position:absolute; inset:-20%; z-index:-1; pointer-events:none;
+    --sx:0px; --sy:0px;
+    background:radial-gradient(42% 38% at 62% 26%, rgba(226,234,244,.30), transparent 70%);
+    transform:translate3d(var(--sx), var(--sy), 0);
+    animation:breathe 14s ease-in-out infinite alternate;
+    transition:transform .6s cubic-bezier(.3,.7,.2,1); will-change:transform}
+  @keyframes breathe{
+    from{opacity:.62; filter:blur(0px)}
+    to{opacity:1; filter:blur(6px)}
+  }
+
+  /* opening sequence */
+  @keyframes rise{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none}}
+  @keyframes fade{from{opacity:0} to{opacity:1}}
+  .js .cover{animation:fade .5s ease both}
+  .js .namecard{animation:rise .62s cubic-bezier(.2,.75,.2,1) both .1s}
+  .js .chip{animation:rise .55s cubic-bezier(.2,.75,.2,1) both .22s}
+  .js .cover h1{animation:rise .6s cubic-bezier(.2,.75,.2,1) both .28s}
+  .js .namecard p{animation:rise .6s cubic-bezier(.2,.75,.2,1) both .36s}
+  .js .dock{animation:rise .6s cubic-bezier(.2,.75,.2,1) both .44s}
+  .js .seg{animation:fade .6s ease both .5s}
+
+  /* pulsing status dot */
+  .chip i{animation:pulse 2.6s ease-in-out infinite}
+  @keyframes pulse{
+    0%,100%{transform:scale(1); opacity:1}
+    50%{transform:scale(.62); opacity:.45}
+  }
+
+  /* sections arriving on scroll (class is added by JS, so no-JS keeps everything visible) */
+  .reveal{opacity:0; transform:translateY(16px);
+    transition:opacity .62s cubic-bezier(.2,.75,.2,1), transform .62s cubic-bezier(.2,.75,.2,1)}
+  .reveal.in{opacity:1; transform:none}
+  .reveal .ghead{transition:opacity .5s ease .04s}
+  .reveal .row, .reveal .free{opacity:0; transform:translateY(10px);
+    transition:opacity .5s ease, transform .5s cubic-bezier(.2,.75,.2,1)}
+  .reveal.in .row, .reveal.in .free{opacity:1; transform:none}
+  .reveal.in .row:nth-child(1), .reveal.in .free:nth-child(1){transition-delay:.06s}
+  .reveal.in .row:nth-child(2){transition-delay:.12s}
+  .reveal.in .row:nth-child(3){transition-delay:.18s}
+  .reveal.in .row:nth-child(4){transition-delay:.24s}
+  .reveal.in .row:nth-child(5){transition-delay:.30s}
+
+  /* language switch: sliding pill + soft text swap */
+  .seg{position:absolute}
+  .seg .pill{position:absolute; top:2px; bottom:2px; left:0; width:0; border-radius:99px;
+    background:rgba(255,255,255,.2); box-shadow:0 1px 3px rgba(0,0,0,.4);
+    transition:transform .38s cubic-bezier(.32,.72,0,1), width .38s cubic-bezier(.32,.72,0,1);
+    pointer-events:none}
+  .seg button{position:relative; z-index:1}
+  .seg button[aria-pressed="true"]{background:transparent; box-shadow:none}
+  .swap{transition:opacity .16s ease}
+  .swap.out{opacity:.35}
+
+  /* micro-interactions */
+  .row .chev{transition:transform .22s cubic-bezier(.3,.7,.2,1)}
+  a.row:hover .chev{transform:translateX(3px)}
+  .ic, .step{transition:transform .28s cubic-bezier(.3,.7,.2,1)}
+  .row:hover .ic{transform:scale(1.08) rotate(-3deg)}
+  .row:hover .step{transform:scale(1.08)}
+  .val.price{transition:color .22s ease, transform .22s ease}
+  .row:hover .val.price{transform:scale(1.04)}
+  .badge{animation:badgePulse 6s ease-in-out infinite}
+  @keyframes badgePulse{
+    0%,88%,100%{transform:scale(1)}
+    92%{transform:scale(1.06)}
+  }
+  .act.glass:active, .nav a:active{transform:scale(.94)}
+  .nav a{transition:transform .18s cubic-bezier(.32,.72,0,1), background .2s ease}
+
+  @media (prefers-reduced-motion:reduce){
+    body::before, .cover .sheen, .chip i, .badge{animation:none!important}
+    .js .cover, .js .namecard, .js .chip, .js .cover h1, .js .namecard p,
+    .js .dock, .js .seg{animation:none!important}
+    .reveal, .reveal .row, .reveal .free{opacity:1!important; transform:none!important}
+  }
+
+
+  /* ================= closing scenes: the trainer, full length ================= */
+  .journey{position:relative; height:430svh; flex:none; margin-block:2px}
+  .journey .stage{position:sticky; top:0; height:100svh; display:flex; align-items:flex-end;
+    border-radius:var(--radius-l); overflow:hidden; isolation:isolate;
+    background:#0B0C0E; box-shadow:var(--shadow), inset 0 0 0 1px var(--stroke)}
+  .scene{position:absolute; inset:0; opacity:0; will-change:transform, opacity;
+    background-size:cover; background-position:center; transform:scale(1.07)}
+  .sA{background-image:url('foto/1-ulica.jpg')}
+  .sB{background-image:url('foto/2-sala.jpg')}
+  .sC{background-image:url('foto/3-vahy.jpg')}
+  .sD{background-image:url('foto/4-plocha.jpg')}
+  .sE{background-image:url('foto/5-full-a.jpg')}
+  .sF{background-image:url('foto/5-full-b.jpg')}
+  .journey .veil2{position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(6,7,9,.34) 0%, transparent 28%, rgba(6,7,9,.6) 70%, rgba(6,7,9,.92) 100%)}
+  .journey .cap{position:relative; z-index:2; padding:20px 20px 104px; width:100%; color:#fff}
+  .journey .cap b{display:block; font-size:clamp(22px,6vw,30px); font-weight:700; letter-spacing:-.03em;
+    line-height:1.08; transition:opacity .3s ease, transform .42s cubic-bezier(.2,.75,.2,1)}
+  .journey .cap span{display:block; margin-top:6px; font-size:14.5px; color:rgba(231,236,244,.78);
+    transition:opacity .3s ease .03s, transform .42s cubic-bezier(.2,.75,.2,1) .03s}
+  .journey .cap.swap b, .journey .cap.swap span{opacity:0; transform:translateY(9px)}
+  .journey .segs{position:absolute; z-index:2; top:16px; left:16px; right:16px; display:flex; gap:6px}
+  .journey .segs i{flex:1; height:2px; border-radius:2px; background:rgba(255,255,255,.22); overflow:hidden}
+  .journey .segs i u{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--grad-c),var(--grad-a))}
+  @media (prefers-reduced-motion:reduce){
+    .journey{height:auto}
+    .journey .stage{position:relative; height:64svh}
+    .scene{opacity:1; transform:none}
+    .scene + .scene{display:none}
+  }
+
+  /* ===== borrowed logic: curtain transitions, masked reveals, read progress ===== */
+  .curtain{position:fixed; inset:-25% -12%; z-index:60; pointer-events:none;
+    background-color:var(--grad-b);
+    background-image:linear-gradient(170deg, var(--grad-a), var(--grad-b) 54%, var(--grad-c));
+    transform:translateY(-135%) skewY(-7deg); will-change:transform; opacity:1}
+  .curtain .mark{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%) skewY(7deg);
+    font-size:13px; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--on-brass);
+    opacity:0; transition:opacity .2s ease}
+  .curtain.sweep{animation:sweep .92s cubic-bezier(.62,0,.3,1) both}
+  .curtain.sweep .mark{animation:markIn .92s ease both}
+  @keyframes sweep{
+    0%{transform:translateY(-135%) skewY(-7deg)}
+    46%{transform:translateY(0) skewY(-7deg)}
+    58%{transform:translateY(0) skewY(-7deg)}
+    100%{transform:translateY(135%) skewY(-7deg)}
+  }
+  @keyframes markIn{0%,30%{opacity:0} 46%,58%{opacity:1} 76%,100%{opacity:0}}
+  .curtain.intro{animation:introSweep .85s cubic-bezier(.62,0,.3,1) both .15s}
+  @keyframes introSweep{
+    0%{transform:translateY(0) skewY(-7deg)}
+    100%{transform:translateY(135%) skewY(-7deg)}
+  }
+
+  /* reading progress — their section dots, rethought for one long page */
+  .prog{position:fixed; top:0; left:0; z-index:55; height:2px; width:0;
+    background:linear-gradient(90deg, var(--grad-c), var(--grad-a));
+    box-shadow:0 0 12px -2px var(--brass); transition:width .1s linear}
+
+  /* masked reveals instead of plain fades */
+  .reveal .list{clip-path:inset(0 0 100% 0);
+    transition:clip-path .78s cubic-bezier(.16,.84,.26,1)}
+  .reveal.in .list{clip-path:inset(0 0 0 0)}
+  .reveal .ghead{clip-path:inset(0 100% 0 0); transition:clip-path .62s cubic-bezier(.16,.84,.26,1)}
+  .reveal.in .ghead{clip-path:inset(0 0 0 0)}
+
+  /* the name unmasks the way their section titles do */
+  .js .cover h1{animation:unmask .8s cubic-bezier(.16,.84,.26,1) both .3s}
+  @keyframes unmask{
+    from{clip-path:inset(0 0 106% 0); transform:translateY(12px)}
+    to{clip-path:inset(0 0 -10% 0); transform:none}
+  }
+  .js .cover{animation:coverOpen .85s cubic-bezier(.16,.84,.26,1) both}
+  @keyframes coverOpen{
+    from{clip-path:inset(0 0 100% 0)}
+    to{clip-path:inset(0 0 0 0)}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .curtain{display:none}
+    .prog{display:none}
+    .reveal .list, .reveal .ghead{clip-path:none!important}
+    .js .cover, .js .cover h1{animation:none!important; clip-path:none!important}
+  }
+
+  /* ================= journey: a filmed walk-in, scrubbed by scroll ================= */
+  .journey{position:relative; height:380svh; flex:none; margin-block:2px}
+  .journey .stage{position:sticky; top:0; height:100svh; display:flex; align-items:flex-end;
+    border-radius:var(--radius-l); overflow:hidden; isolation:isolate;
+    background:#0A0B0D center/cover no-repeat url('foto/frames/008.webp');
+    box-shadow:var(--shadow), inset 0 0 0 1px var(--stroke)}
+  .journey canvas{position:absolute; inset:0; width:100%; height:100%; display:block}
+  .journey .veil2{position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(6,7,9,.40) 0%, transparent 30%, rgba(6,7,9,.6) 72%, rgba(6,7,9,.9) 100%)}
+  .journey .cap{position:relative; z-index:2; padding:20px 20px 104px; width:100%; color:#fff}
+  .journey .cap b{display:block; font-size:clamp(22px,6vw,30px); font-weight:700; letter-spacing:-.03em;
+    line-height:1.08; transition:opacity .3s ease, transform .42s cubic-bezier(.2,.75,.2,1)}
+  .journey .cap span{display:block; margin-top:6px; font-size:14.5px; color:rgba(231,236,244,.78);
+    transition:opacity .3s ease .03s, transform .42s cubic-bezier(.2,.75,.2,1) .03s}
+  .journey .cap.swap b, .journey .cap.swap span{opacity:0; transform:translateY(9px)}
+  .journey .segs{position:absolute; z-index:2; top:16px; left:16px; right:16px; display:flex; gap:6px}
+  .journey .segs i{flex:1; height:2px; border-radius:2px; background:rgba(255,255,255,.22); overflow:hidden}
+  .journey .segs i u{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--grad-c),var(--grad-a))}
+  .journey .loadbar{position:absolute; z-index:2; left:16px; right:16px; top:24px; height:1px;
+    background:rgba(255,255,255,.5); transform-origin:left; transform:scaleX(0);
+    transition:transform .3s linear, opacity .5s ease}
+  .journey .loadbar.done{opacity:0}
+  @media (prefers-reduced-motion:reduce){
+    .journey{height:auto}
+    .journey .stage{position:relative; height:62svh}
+    .journey canvas{display:none}
+  }
+
+
+  /* ================= closing scenes: the trainer, full length ================= */
+  .journey{position:relative; height:430svh; flex:none; margin-block:2px}
+  .journey .stage{position:sticky; top:0; height:100svh; display:flex; align-items:flex-end;
+    border-radius:var(--radius-l); overflow:hidden; isolation:isolate;
+    background:#0B0C0E; box-shadow:var(--shadow), inset 0 0 0 1px var(--stroke)}
+  .scene{position:absolute; inset:0; opacity:0; will-change:transform, opacity;
+    background-size:cover; background-position:center; transform:scale(1.07)}
+  .sA{background-image:url('foto/1-ulica.jpg')}
+  .sB{background-image:url('foto/2-sala.jpg')}
+  .sC{background-image:url('foto/3-vahy.jpg')}
+  .sD{background-image:url('foto/4-plocha.jpg')}
+  .sE{background-image:url('foto/5-full-a.jpg')}
+  .sF{background-image:url('foto/5-full-b.jpg')}
+  .journey .veil2{position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(6,7,9,.34) 0%, transparent 28%, rgba(6,7,9,.6) 70%, rgba(6,7,9,.92) 100%)}
+  .journey .cap{position:relative; z-index:2; padding:20px 20px 104px; width:100%; color:#fff}
+  .journey .cap b{display:block; font-size:clamp(22px,6vw,30px); font-weight:700; letter-spacing:-.03em;
+    line-height:1.08; transition:opacity .3s ease, transform .42s cubic-bezier(.2,.75,.2,1)}
+  .journey .cap span{display:block; margin-top:6px; font-size:14.5px; color:rgba(231,236,244,.78);
+    transition:opacity .3s ease .03s, transform .42s cubic-bezier(.2,.75,.2,1) .03s}
+  .journey .cap.swap b, .journey .cap.swap span{opacity:0; transform:translateY(9px)}
+  .journey .segs{position:absolute; z-index:2; top:16px; left:16px; right:16px; display:flex; gap:6px}
+  .journey .segs i{flex:1; height:2px; border-radius:2px; background:rgba(255,255,255,.22); overflow:hidden}
+  .journey .segs i u{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--grad-c),var(--grad-a))}
+  @media (prefers-reduced-motion:reduce){
+    .journey{height:auto}
+    .journey .stage{position:relative; height:64svh}
+    .scene{opacity:1; transform:none}
+    .scene + .scene{display:none}
+  }
+
+  /* ===== borrowed logic: curtain transitions, masked reveals, read progress ===== */
+  .curtain{position:fixed; inset:-25% -12%; z-index:60; pointer-events:none;
+    background-color:var(--grad-b);
+    background-image:linear-gradient(170deg, var(--grad-a), var(--grad-b) 54%, var(--grad-c));
+    transform:translateY(-135%) skewY(-7deg); will-change:transform; opacity:1}
+  .curtain .mark{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%) skewY(7deg);
+    font-size:13px; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--on-brass);
+    opacity:0; transition:opacity .2s ease}
+  .curtain.sweep{animation:sweep .92s cubic-bezier(.62,0,.3,1) both}
+  .curtain.sweep .mark{animation:markIn .92s ease both}
+  @keyframes sweep{
+    0%{transform:translateY(-135%) skewY(-7deg)}
+    46%{transform:translateY(0) skewY(-7deg)}
+    58%{transform:translateY(0) skewY(-7deg)}
+    100%{transform:translateY(135%) skewY(-7deg)}
+  }
+  @keyframes markIn{0%,30%{opacity:0} 46%,58%{opacity:1} 76%,100%{opacity:0}}
+  .curtain.intro{animation:introSweep .85s cubic-bezier(.62,0,.3,1) both .15s}
+  @keyframes introSweep{
+    0%{transform:translateY(0) skewY(-7deg)}
+    100%{transform:translateY(135%) skewY(-7deg)}
+  }
+
+  /* reading progress — their section dots, rethought for one long page */
+  .prog{position:fixed; top:0; left:0; z-index:55; height:2px; width:0;
+    background:linear-gradient(90deg, var(--grad-c), var(--grad-a));
+    box-shadow:0 0 12px -2px var(--brass); transition:width .1s linear}
+
+  /* masked reveals instead of plain fades */
+  .reveal .list{clip-path:inset(0 0 100% 0);
+    transition:clip-path .78s cubic-bezier(.16,.84,.26,1)}
+  .reveal.in .list{clip-path:inset(0 0 0 0)}
+  .reveal .ghead{clip-path:inset(0 100% 0 0); transition:clip-path .62s cubic-bezier(.16,.84,.26,1)}
+  .reveal.in .ghead{clip-path:inset(0 0 0 0)}
+
+  /* the name unmasks the way their section titles do */
+  .js .cover h1{animation:unmask .8s cubic-bezier(.16,.84,.26,1) both .3s}
+  @keyframes unmask{
+    from{clip-path:inset(0 0 106% 0); transform:translateY(12px)}
+    to{clip-path:inset(0 0 -10% 0); transform:none}
+  }
+  .js .cover{animation:coverOpen .85s cubic-bezier(.16,.84,.26,1) both}
+  @keyframes coverOpen{
+    from{clip-path:inset(0 0 100% 0)}
+    to{clip-path:inset(0 0 0 0)}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .curtain{display:none}
+    .prog{display:none}
+    .reveal .list, .reveal .ghead{clip-path:none!important}
+    .js .cover, .js .cover h1{animation:none!important; clip-path:none!important}
+  }
+
+  /* ================= journey: four scenes, cross-faded by scroll ================= */
+  .journey{position:relative; height:340svh; flex:none; margin-block:2px}
+  .journey .stage{position:sticky; top:0; height:100svh; display:flex; align-items:flex-end;
+    border-radius:var(--radius-l); overflow:hidden; isolation:isolate;
+    box-shadow:var(--shadow), inset 0 0 0 1px var(--stroke)}
+  .scene{position:absolute; inset:0; opacity:0; will-change:transform, opacity;
+    background-size:cover; background-position:center; transform:scale(1.08)}
+  .scene.ph{display:grid; place-items:center}
+  .scene.ph b{font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
+    color:rgba(255,255,255,.34)}
+  /* ——— PHOTOGRAPHS GO HERE ———
+     The four files in foto/ are stand-ins drawn in code. Replace them with real
+     photographs under the same names — nothing else needs to change.
+     Shoot vertically (3:4 or 9:16), around 1600 px on the long side. */
+  .s1{background-image:url('foto/1-ulica.jpg')}
+  .s2{background-image:url('foto/2-vchod.jpg')}
+  .s3{background-image:url('foto/3-sala.jpg')}
+  .s4{background-image:url('foto/4-trener.jpg')}
+  .journey .veil2{position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(6,6,7,.42) 0%, transparent 34%, rgba(6,6,7,.62) 74%, rgba(6,6,7,.9) 100%)}
+  .journey .cap{position:relative; z-index:2; padding:20px 20px 104px; width:100%; color:#fff}
+  .journey .cap b{display:block; font-size:clamp(22px,6vw,30px); font-weight:700; letter-spacing:-.03em;
+    line-height:1.08; transition:opacity .3s ease, transform .42s cubic-bezier(.2,.75,.2,1)}
+  .journey .cap span{display:block; margin-top:6px; font-size:14.5px; color:rgba(235,235,245,.76);
+    transition:opacity .3s ease .03s, transform .42s cubic-bezier(.2,.75,.2,1) .03s}
+  .journey .cap.swap b, .journey .cap.swap span{opacity:0; transform:translateY(9px)}
+  .journey .segs{position:absolute; z-index:2; top:16px; left:16px; right:16px; display:flex; gap:6px}
+  .journey .segs i{flex:1; height:2px; border-radius:2px; background:rgba(255,255,255,.2); overflow:hidden}
+  .journey .segs i u{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--grad-c),var(--grad-a))}
+  @media (prefers-reduced-motion:reduce){
+    .journey{height:auto}
+    .journey .stage{position:relative; height:62svh}
+    .scene{opacity:1; transform:none}
+    .scene + .scene{display:none}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html,body{scroll-behavior:auto}
+    *{transition:none!important; animation:none!important}
+    .cover .bg{transform:none!important}
+    .act.primary::before, .act.primary::after{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+<div class="curtain intro" id="curtain"><span class="mark" id="curtainMark">TK</span></div>
+
+<div class="nav" id="nav">
+  <div class="in">
+    <span class="ini">RS</span>
+    <b data-i18n="name">Ruslan Sidor</b>
+    <a href="tel:+421951784559" aria-label="Zavolať">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v4a1 1 0 0 1-1.1 1A17 17 0 0 1 3 5.1 1 1 0 0 1 4 4z"/></svg>
+    </a>
+  </div>
+</div>
+
+<div class="shell">
+  <div class="col-side">
+    <header class="cover">
+      <div class="bg" id="coverbg"></div>
+      <div class="sheen" id="sheen"></div>
+      <div class="grain"></div>
+      <div class="veil"></div>
+      <nav class="seg lang" aria-label="Jazyk">
+        <span class="pill" id="pill"></span>
+        <button type="button" data-lang="sk" aria-pressed="true">SK</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+        <button type="button" data-lang="uk" aria-pressed="false">UA</button>
+      </nav>
+      <div class="namecard">
+        <span class="chip"><i></i><span data-i18n="role">Osobný tréner</span> · <span data-i18n="city">Bratislava</span></span>
+        <h1 data-i18n="name">Ruslan Sidor</h1>
+        <p data-i18n="intro">Individuálne tréningy jeden na jedného v Damifit. Sila, kondícia aj postava.</p>
+      </div>
+    </header>
+
+    <div class="dock">
+      <div class="in">
+        <a class="act primary" href="https://t.me/ruslanvasilovich81">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 4.3 2.9 11.4l5.5 1.8L19 6.4l-8.3 7.9.3 5.1 2.9-3.5 4.3 3.2z"/></svg>
+          <span data-i18n="book">Objednať tréning</span>
+        </a>
+        <a class="act glass" href="tel:+421951784559" aria-label="Zavolať">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v4a1 1 0 0 1-1.1 1A17 17 0 0 1 3 5.1 1 1 0 0 1 4 4z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-main">
+    <section class="group">
+      <p class="ghead" data-i18n="h_svc">S čím pracujem</p>
+      <div class="list">
+        <div class="row icon">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 9v6M7 7v10M17 7v10M20 9v6M7 12h10"/></svg></span>
+          <span class="txt"><b data-i18n="s1t">Silový tréning</b><span data-i18n="s1d">Drep, mŕtvy ťah a tlaky — technika od základu a plán, ktorý rastie s vami.</span></span>
+        </div>
+        <div class="row icon">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 3.5 5 6.2 5 9a5 5 0 0 1-10 0c0-1.6.7-3 2-4.5.4 1.4 1.1 2.2 2 2.5-.3-2.4.1-4.7 1-7z"/></svg></span>
+          <span class="txt"><b data-i18n="s2t">CrossFit a kondícia</b><span data-i18n="s2d">Kruhové a intervalové tréningy pre dych, silu a chudnutie.</span></span>
+        </div>
+        <div class="row icon">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2-5 3 10 2-6 2 3h5"/></svg></span>
+          <span class="txt"><b data-i18n="s3t">Kulturistika</b><span data-i18n="s3d">Práca na postave: objem, delenie partií, technika v strojoch.</span></span>
+        </div>
+        <div class="row icon">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M9 21h6M12 17v4"/></svg></span>
+          <span class="txt"><b data-i18n="s4t">Fitness pre začiatočníkov</b><span data-i18n="s4d">Prvé mesiace v posilňovni bez zranení a bez hanby — krok za krokom.</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="group">
+      <p class="ghead" data-i18n="h_how">Ako to prebieha</p>
+      <div class="list">
+        <div class="row icon">
+          <span class="step">1</span>
+          <span class="txt"><b data-i18n="w1t">Napíšete</b><span data-i18n="w1d">Ozvem sa do pár hodín a dohodneme termín.</span></span>
+        </div>
+        <div class="row icon">
+          <span class="step">2</span>
+          <span class="txt"><b data-i18n="w2t">Prídete na úvodné stretnutie</b><span data-i18n="w2d">Prejdeme ciele, zdravie a pohyb. Zadarmo a bez záväzku.</span></span>
+        </div>
+        <div class="row icon">
+          <span class="step">3</span>
+          <span class="txt"><b data-i18n="w3t">Dostanete plán</b><span data-i18n="w3d">Trénujeme podľa neho a merať posun budeme každé tri týždne.</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="group">
+      <p class="ghead" data-i18n="h_price">Cenník</p>
+      <div class="list">
+        <div class="free">
+          <span class="txt"><b data-i18n="p1">Prvé stretnutie</b><span data-i18n="p1s">Zoznámenie, ciele a prvý tréning</span></span>
+          <span class="badge">15 €</span>
+        </div>
+        <div class="row">
+          <span class="txt"><b data-i18n="p2">Individuálny tréning</b><span data-i18n="p2s">Jeden na jedného</span></span>
+          <span class="val price">20 €</span>
+        </div>
+        <div class="row">
+          <span class="txt"><b data-i18n="p3">Tréning vo dvojici a viac</b><span data-i18n="p3s">Cena za osobu</span></span>
+          <span class="val price">15 €</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="journey" id="journey">
+      <div class="stage">
+        <div class="scene sA"></div>
+        <div class="scene sB"></div>
+        <div class="scene sC"></div>
+        <div class="scene sD"></div>
+        <div class="scene sE"></div>
+        <div class="scene sF"></div>
+        <div class="veil2"></div>
+        <div class="segs"><i><u></u></i><i><u></u></i><i><u></u></i><i><u></u></i><i><u></u></i><i><u></u></i></div>
+        <div class="cap" id="jcap">
+          <b id="jcapT" data-i18n="f1t">Damifit, Gessayova 39</b>
+          <span id="jcapS" data-i18n="f1s">Vchod z parkoviska, Petržalka</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="group">
+      <p class="ghead" data-i18n="h_contact">Kontakt</p>
+      <div class="list">
+        <a class="row" href="tel:+421951784559">
+          <span class="txt"><b data-i18n="k_phone">Telefón</b></span>
+          <span class="val">+421 951 784 559</span>
+          <svg class="chev" viewBox="0 0 8 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1.5 1.5 5 5-5 5"/></svg>
+        </a>
+        <a class="row" href="https://t.me/ruslanvasilovich81">
+          <span class="txt"><b>Telegram</b></span>
+          <span class="val">@ruslanvasilovich81</span>
+          <svg class="chev" viewBox="0 0 8 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1.5 1.5 5 5-5 5"/></svg>
+        </a>
+        <a class="row" href="https://wa.me/421951784559">
+          <span class="txt"><b>WhatsApp</b></span>
+          <span class="val">+421 951 784 559</span>
+          <svg class="chev" viewBox="0 0 8 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1.5 1.5 5 5-5 5"/></svg>
+        </a>
+        <a class="row" href="https://maps.app.goo.gl/9D1r8CKKxjrAeodu7">
+          <span class="txt"><b>Damifit</b><span data-i18n="where_s">Gessayova 39, 851 03 Bratislava-Petržalka</span></span>
+          <svg class="chev" viewBox="0 0 8 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1.5 1.5 5 5-5 5"/></svg>
+        </a>
+        <div class="row">
+          <span class="txt"><b data-i18n="k_hours">Otvorené</b><span data-i18n="hours">Po–Pi 6:00–21:00 · So–Ne 7:00–20:00</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="group">
+      <div class="list">
+        <a class="row icon mid" id="vcard" href="#" download="ruslan-sidor.vcf">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"/><path d="m7.5 10 4.5 4.5 4.5-4.5"/><path d="M5 20h14"/></svg></span>
+          <span class="txt"><b data-i18n="save">Uložiť kontakt</b></span>
+          <svg class="chev" viewBox="0 0 8 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1.5 1.5 5 5-5 5"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <footer>© 2026 <span data-i18n="name">Ruslan Sidor</span></footer>
+  </div>
+</div>
+
+<script>
+(function(){
+  var nav   = document.getElementById('nav');
+  var cover = document.querySelector('.cover');
+  var bg    = document.getElementById('coverbg');
+  var sheen = document.getElementById('sheen');
+  var btn   = document.querySelector('.act.primary');
+  var pill  = document.getElementById('pill');
+  var shell = document.querySelector('.shell');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.documentElement.classList.add('js');
+
+  var curtain = document.getElementById('curtain');
+  var mark    = document.getElementById('curtainMark');
+  var prog    = document.getElementById('prog');
+
+  /* the intro curtain only plays once per visit, never on a re-read */
+  try{
+    if (reduce || sessionStorage.getItem('seen') === '1'){
+      if (curtain) curtain.classList.remove('intro');
+    } else {
+      sessionStorage.setItem('seen', '1');
+    }
+  }catch(e){}
+
+  /* ---------- sections arriving on scroll ---------- */
+  var groups = Array.prototype.slice.call(document.querySelectorAll('.col-main .group'));
+  if (!reduce && 'IntersectionObserver' in window){
+    groups.forEach(function(g){ g.classList.add('reveal'); });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.06});
+    groups.forEach(function(g){ io.observe(g); });
+    /* safety net: never leave anything hidden */
+    setTimeout(function(){ groups.forEach(function(g){ g.classList.add('in'); }); }, 2500);
+  }
+
+  /* ---------- sliding pill under the active language ---------- */
+  function movePill(){
+    if (!pill) return;
+    var on = document.querySelector('.seg button[aria-pressed="true"]');
+    if (!on) return;
+    pill.style.width = on.offsetWidth + 'px';
+    pill.style.transform = 'translateX(' + on.offsetLeft + 'px)';
+  }
+  var LABEL = {sk:'Slovensky', ru:'По-русски', uk:'Українською'};
+  document.querySelectorAll('.seg button').forEach(function(b){
+    b.addEventListener('click', function(){
+      requestAnimationFrame(movePill);
+      if (reduce || !curtain) return;
+      if (mark) mark.textContent = LABEL[b.getAttribute('data-lang')] || '';
+      curtain.classList.remove('intro');
+      curtain.classList.remove('sweep');
+      void curtain.offsetWidth;          /* restart the animation */
+      curtain.classList.add('sweep');
+    });
+  });
+  movePill();
+  window.addEventListener('resize', movePill, {passive:true});
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(movePill);
+
+  /* ---------- closing scenes: scroll cross-fades the full-length shots ---------- */
+  var journey = document.getElementById('journey');
+  var scenes  = journey ? [].slice.call(journey.querySelectorAll('.scene')) : [];
+  var segs    = journey ? [].slice.call(journey.querySelectorAll('.segs u')) : [];
+  var jcap    = document.getElementById('jcap');
+  var jcapT   = document.getElementById('jcapT');
+  var jcapS   = document.getElementById('jcapS');
+  var jstep   = -1;
+
+  function journeyFrame(){
+    if (!journey || !scenes.length) return;
+    var r = journey.getBoundingClientRect();
+    var total = r.height - window.innerHeight;
+    var p = total > 0 ? Math.min(1, Math.max(0, -r.top / total)) : 0;
+    var n = scenes.length, pos = p * (n - 1);
+
+    for (var i = 0; i < n; i++){
+      var d = Math.abs(pos - i);
+      scenes[i].style.opacity = Math.max(0, 1 - d).toFixed(3);
+      var local = Math.min(1, Math.max(0, pos - i + 1));
+      scenes[i].style.transform = 'scale(' + (1.07 - 0.07 * local).toFixed(4) + ')';
+      if (segs[i]) segs[i].style.width = (local * 100).toFixed(1) + '%';
+    }
+
+    var cur = Math.min(n - 1, Math.round(pos));
+    if (cur !== jstep){
+      jstep = cur;
+      var t = 'f' + (cur + 1) + 't', sK = 'f' + (cur + 1) + 's';
+      jcapT.setAttribute('data-i18n', t); jcapS.setAttribute('data-i18n', sK);
+      var dict = window.__i18n && window.__i18n[document.documentElement.lang];
+      var setText = function(){
+        if (dict){ jcapT.textContent = dict[t] || jcapT.textContent; jcapS.textContent = dict[sK] || jcapS.textContent; }
+      };
+      if (reduce){ setText(); }
+      else {
+        jcap.classList.add('swap');
+        setTimeout(function(){ setText(); jcap.classList.remove('swap'); }, 190);
+      }
+    }
+  }
+
+  /* ---------- scroll: compact header + cover parallax ---------- */
+  var ticking = false;
+  function frame(){
+    ticking = false;
+    var r = cover.getBoundingClientRect();
+    if (nav) nav.classList.toggle('show', r.bottom < 56 && window.innerWidth < 760);
+    if (bg && !reduce && r.bottom > 0 && r.top < window.innerHeight){
+      bg.style.transform = 'translate3d(0,' + (-r.top * 0.08).toFixed(1) + 'px,0)';
+    }
+    journeyFrame();
+    if (prog){
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var done = max > 40 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      prog.style.width = (done * 100).toFixed(2) + '%';
+    }
+  }
+  function onScroll(){ if (!ticking){ ticking = true; requestAnimationFrame(frame); } }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll, {passive:true});
+  frame();
+
+  if (reduce) return;
+
+  /* ---------- light follows the cursor across the page ---------- */
+  function light(x, y){
+    if (sheen){
+      var r = cover.getBoundingClientRect();
+      var dx = ((x - (r.left + r.width / 2)) / r.width) * 46;
+      var dy = ((y - (r.top + r.height / 2)) / r.height) * 34;
+      sheen.style.setProperty('--sx', dx.toFixed(1) + 'px');
+      sheen.style.setProperty('--sy', dy.toFixed(1) + 'px');
+    }
+  }
+  window.addEventListener('pointermove', function(e){ light(e.clientX, e.clientY); }, {passive:true});
+
+  /* ---------- finger / cursor glow on the main button ---------- */
+  if (btn){
+    var track = function(e){
+      var r = btn.getBoundingClientRect();
+      var p = e.touches ? e.touches[0] : e;
+      btn.style.setProperty('--mx', (((p.clientX - r.left) / r.width) * 100).toFixed(1) + '%');
+      btn.style.setProperty('--my', (((p.clientY - r.top) / r.height) * 100).toFixed(1) + '%');
+      btn.classList.add('lit');
+    };
+    var drop = function(){ btn.classList.remove('lit'); };
+    ['pointermove','pointerdown'].forEach(function(ev){ btn.addEventListener(ev, track, {passive:true}); });
+    ['pointerleave','pointerup','pointercancel'].forEach(function(ev){ btn.addEventListener(ev, drop, {passive:true}); });
+  }
+
+  /* ---------- tilt: Android grants motion without a prompt; iOS needs a
+       system dialog, which has no place on a business card ---------- */
+  if (typeof DeviceOrientationEvent === 'undefined') return;
+  if (typeof DeviceOrientationEvent.requestPermission === 'function') return;
+
+  var cur = 0, aim = 0, running = false;
+  window.addEventListener('deviceorientation', function(e){
+    if (e.gamma === null || e.gamma === undefined) return;
+    aim = Math.max(-26, Math.min(26, e.gamma));
+    if (!running){ running = true; requestAnimationFrame(ease); }
+  }, {passive:true});
+
+  function ease(){
+    cur += (aim - cur) * 0.12;
+    if (btn) btn.style.setProperty('--tilt', (cur * 1.6).toFixed(2) + 'deg');
+    if (sheen){
+      sheen.style.setProperty('--sx', (cur * 1.5).toFixed(1) + 'px');
+      sheen.style.setProperty('--sy', (Math.abs(cur) * .4).toFixed(1) + 'px');
+    }
+    if (Math.abs(aim - cur) > 0.15){ requestAnimationFrame(ease); } else { running = false; }
+  }
+})();
+</script>
+<script>
+(function () {
+  var DICT = {
+    sk: {
+      st1: "rokov praxe", st2: "vedených klientov", st3: "vždy sám s vami",
+      photo: "Miesto na fotografiu",
+      h_how: "Ako to prebieha",
+      w1t: "Napíšete", w1d: "Ozvem sa do pár hodín a dohodneme termín.",
+      w2t: "Prvé stretnutie", w2d: "Prejdeme ciele, zdravie a pohyb a rovno trénujeme. 15 €.",
+      w3t: "Dostanete plán", w3d: "Trénujeme podľa neho a posun meriame každé tri týždne.",
+      f1t: "Damifit, Gessayova 39", f1s: "Vchod z parkoviska, Petržalka",
+      f2t: "Hlavná sála", f2s: "Činky, lavice a stroje pri oknách",
+      f3t: "Voľné váhy", f3s: "Kompletný rad jednoručiek do ťažkých čísel",
+      f4t: "Dolná plocha", f4s: "Tatami, vrecia a priestor na techniku",
+      f5t: "Trénujem to, čo učím", f5s: "Rovnaké drepy, rovnaké tlaky, rovnaká technika.",
+      f6t: "Výsledok je práca", f6s: "Žiadne zázraky — plán, záťaž a pravidelnosť.",
+      name: "Ruslan Sidor",
+      role: "Osobný tréner", city: "Bratislava",
+      intro: "Individuálne tréningy jeden na jedného v Damifit. Sila, kondícia aj postava — plán šitý na vaše telo a váš čas.",
+      book: "Objednať tréning", call: "Zavolať", save: "Uložiť kontakt",
+      h_svc: "S čím pracujem", h_price: "Cenník", h_contact: "Kontakt",
+      s1t: "Silový tréning",
+      s1d: "Drep, mŕtvy ťah a tlaky — technika od základu a plán, ktorý rastie s vami.",
+      s2t: "CrossFit a kondícia",
+      s2d: "Kruhové a intervalové tréningy pre dych, silu a chudnutie.",
+      s3t: "Kulturistika",
+      s3d: "Práca na postave: objem, delenie partií, technika v strojoch.",
+      s4t: "Fitness pre začiatočníkov",
+      s4d: "Prvé mesiace v posilňovni bez zranení a bez hanby — krok za krokom.",
+      p1: "Prvé stretnutie", p1s: "Zoznámenie, ciele a prvý tréning",
+      p2: "Individuálny tréning", p2s: "Jeden na jedného",
+      p3: "Tréning vo dvojici a viac", p3s: "Cena za osobu",
+      
+      k_phone: "Telefón", k_mail: "E-mail", k_where: "Kde", k_hours: "Otvorené",
+      where_s: "Gessayova 39, 851 03 Bratislava-Petržalka",
+      hours: "Po–Pi 6:00–21:00 · So–Ne 7:00–20:00",
+      demo: "Ukážka — meno, ceny a kontakty sú vymyslené"
+    },
+    ru: {
+      st1: "лет практики", st2: "клиентов за плечами", st3: "всегда один на один",
+      photo: "Место под фотографию",
+      h_how: "Как это проходит",
+      w1t: "Пишете", w1d: "Отвечаю в течение пары часов и согласуем время.",
+      w2t: "Первая встреча", w2d: "Разбираем цели, здоровье и движение и сразу тренируемся. 15 €.",
+      w3t: "Получаете план", w3d: "Тренируемся по нему и замеряем прогресс каждые три недели.",
+      f1t: "Damifit, Gessayova 39", f1s: "Вход с парковки, Петржалка",
+      f2t: "Основной зал", f2s: "Гантели, скамьи и тренажёры у окон",
+      f3t: "Свободные веса", f3s: "Полный ряд гантелей до тяжёлых",
+      f4t: "Нижняя площадка", f4s: "Маты, мешки и место для техники",
+      f5t: "Тренирую то, чему учу", f5s: "Те же приседы, те же жимы, та же техника.",
+      f6t: "Результат — это работа", f6s: "Никаких чудес: план, нагрузка и регулярность.",
+      name: "Руслан Сидор",
+      role: "Персональный тренер", city: "Братислава",
+      intro: "Индивидуальные тренировки один на один в Damifit. Сила, выносливость и форма — программа под ваше тело и ваш график.",
+      book: "Записаться", call: "Позвонить", save: "Сохранить контакт",
+      h_svc: "С чем работаю", h_price: "Цены", h_contact: "Контакты",
+      s1t: "Силовые тренировки",
+      s1d: "Присед, тяга, жимы — техника с нуля и план, который растёт вместе с вами.",
+      s2t: "Кроссфит и выносливость",
+      s2d: "Круговые и интервальные тренировки: дыхание, сила, снижение веса.",
+      s3t: "Бодибилдинг",
+      s3d: "Работа над формой: объём, сплит по группам мышц, техника в тренажёрах.",
+      s4t: "Фитнес для новичков",
+      s4d: "Первые месяцы в зале без травм и без стеснения — шаг за шагом.",
+      p1: "Первая встреча", p1s: "Знакомство, цели и первая тренировка",
+      p2: "Индивидуальная тренировка", p2s: "Один на один",
+      p3: "Тренировка вдвоём и больше", p3s: "Цена за человека",
+      
+      k_phone: "Телефон", k_mail: "Почта", k_where: "Где", k_hours: "Часы",
+      where_s: "Gessayova 39, 851 03 Братислава-Петржалка",
+      hours: "Пн–Пт 6:00–21:00 · Сб–Вс 7:00–20:00",
+      demo: "Пример — имя, цены и контакты вымышленные"
+    },
+    uk: {
+      st1: "років практики", st2: "клієнтів за плечима", st3: "завжди один на один",
+      photo: "Місце під фотографію",
+      h_how: "Як це відбувається",
+      w1t: "Пишете", w1d: "Відповідаю протягом кількох годин і узгоджуємо час.",
+      w2t: "Перша зустріч", w2d: "Розбираємо цілі, здоровʼя та рух і одразу тренуємось. 15 €.",
+      w3t: "Отримуєте план", w3d: "Тренуємось за ним і заміряємо прогрес кожні три тижні.",
+      f1t: "Damifit, Gessayova 39", f1s: "Вхід з парковки, Петржалка",
+      f2t: "Основна зала", f2s: "Гантелі, лави та тренажери біля вікон",
+      f3t: "Вільні ваги", f3s: "Повний ряд гантелей до важких",
+      f4t: "Нижній майданчик", f4s: "Мати, мішки та місце для техніки",
+      f5t: "Треную те, чого вчу", f5s: "Ті самі присідання, ті самі жими, та сама техніка.",
+      f6t: "Результат — це робота", f6s: "Жодних див: план, навантаження і регулярність.",
+      name: "Руслан Сидор",
+      role: "Персональний тренер", city: "Братислава",
+      intro: "Індивідуальні тренування один на один у Damifit. Сила, витривалість і форма — програма під ваше тіло та ваш графік.",
+      book: "Записатися", call: "Зателефонувати", save: "Зберегти контакт",
+      h_svc: "З чим працюю", h_price: "Ціни", h_contact: "Контакти",
+      s1t: "Силові тренування",
+      s1d: "Присід, тяга, жими — техніка з нуля і план, що росте разом з вами.",
+      s2t: "Кросфіт і витривалість",
+      s2d: "Кругові та інтервальні тренування: дихання, сила, схуднення.",
+      s3t: "Бодибілдинг",
+      s3d: "Робота над формою: обʼєм, спліт по групах мʼязів, техніка в тренажерах.",
+      s4t: "Фітнес для початківців",
+      s4d: "Перші місяці в залі без травм і без сорому — крок за кроком.",
+      p1: "Перша зустріч", p1s: "Знайомство, цілі та перше тренування",
+      p2: "Індивідуальне тренування", p2s: "Один на один",
+      p3: "Тренування вдвох і більше", p3s: "Ціна за людину",
+      
+      k_phone: "Телефон", k_mail: "Пошта", k_where: "Де", k_hours: "Години",
+      where_s: "Gessayova 39, 851 03 Братислава-Петржалка",
+      hours: "Пн–Пт 6:00–21:00 · Сб–Вс 7:00–20:00",
+      demo: "Приклад — ім'я, ціни та контакти вигадані"
+    }
+  };
+
+  window.__i18n = DICT;
+
+  var nodes = document.querySelectorAll("[data-i18n]");
+  var buttons = document.querySelectorAll(".lang button");
+
+  function apply(lang) {
+    var d = DICT[lang] || DICT.sk;
+    nodes = document.querySelectorAll("[data-i18n]");
+    nodes.forEach(function (n) {
+      var k = n.getAttribute("data-i18n");
+      if (!d[k]) return;
+      var small = n.querySelector("small");
+      if (small) {
+        var sk = small.getAttribute("data-i18n");
+        n.textContent = d[k];
+        if (sk && d[sk]) { small.textContent = d[sk]; n.appendChild(small); }
+      } else {
+        n.textContent = d[k];
+      }
+    });
+    buttons.forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === lang));
+    });
+    document.documentElement.lang = lang;
+    try { localStorage.setItem("vizitka-lang", lang); } catch (e) {}
+    try { if (history && history.replaceState) history.replaceState(null, "", "#" + lang); } catch (e) {}
+  }
+
+  function pick(b, e) {
+    if (e) { e.preventDefault(); }
+    apply(b.getAttribute("data-lang"));
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function (e) { pick(b, e); });
+    b.addEventListener("touchend", function (e) { pick(b, e); }, {passive: false});
+  });
+  window.addEventListener("hashchange", function () {
+    var h = (location.hash || "").replace("#", "");
+    if (DICT[h]) apply(h);
+  });
+
+  var start = "sk";
+  var fromUrl = (location.hash || "").replace("#", "") ||
+                (location.search.match(/[?&]lang=([a-z]{2})/i) || [])[1] || "";
+  if (DICT[fromUrl]) start = fromUrl;
+  else
+  try {
+    var saved = localStorage.getItem("vizitka-lang");
+    if (saved && DICT[saved]) start = saved;
+    else {
+      var nav = (navigator.language || "").slice(0, 2);
+      if (nav === "ru" || nav === "uk") start = nav;
+    }
+  } catch (e) {}
+  apply(start);
+
+  var vcf = [
+    "BEGIN:VCARD", "VERSION:3.0",
+    "N:Sidor;Ruslan;;;", "FN:Ruslan Sidor",
+    "TITLE:Osobný tréner — Damifit",
+    "TEL;TYPE=CELL:+421951784559",
+        "ADR;TYPE=WORK:;;Gessayova 39;Bratislava;;851 03;Slovensko",
+    "URL:https://t.me/ruslanvasilovich81",
+    "END:VCARD"
+  ].join("\r\n");
+  var vc = document.getElementById("vcard");
+  if (vc) vc.href = "data:text/vcard;charset=utf-8," + encodeURIComponent(vcf);
+})();
+</script>
+</body>
+</html>
